@@ -88,17 +88,21 @@ def showxml(sender, pageUrl):
   link="http://www.tnt.tv/processors/services/getCollectionByContentId.do?offset=0&sort=&limit=200&id=" + showID
   shows=XML.ElementFromURL(link).xpath('//episode')
   for show in shows:
+    
     #episodeID  
-    epID=show.get('id')
+    epID=show.xpath('./grouperId')[0].text
+    Log(epID)
 
     #title
     title=show.xpath('./title')[0].text
+    Log(title)
 
     #thumb
     thumb=show.xpath('./thumbnailUrl')[0].text
     #summary
     summary=show.xpath('./description')[0].text
-    clip="http://www.tnt.tv/dramavision/index.jsp?oid=" + epID    
+    clip="http://www.tnt.tv/dramavision/index.jsp?oid=" + epID 
+    Log("link: " + clip)   
     
     
 ##########   This section knows the location of the flv file, but the stream is rtmpe

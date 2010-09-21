@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<site site="http://www.tnt.tv"
+<site site="http://www.tnt.tv/dramavision/"
 	    plugin="http://www.tnt.tv/dramavision/tnt_video.swf"
-			initialState="playing"
+        	initialState="playing"
 			version="1.0">
 
 	<crop x="0" y="0" width="640" height="360"/>
